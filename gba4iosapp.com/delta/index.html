@@ -5,15 +5,17 @@
 		<title>GBA4iOS</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/common.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
-            ul.countdown {
+
+			ul.countdown {
                 list-style: none;
                 margin: 75px 0;
                 padding: 0;
                 display: block;
                 text-align: center;
+                background-color:#FF11EE;
             }
 
             ul.countdown li {
@@ -21,22 +23,40 @@
             }
 
             ul.countdown li span {
-                font-size: 80px;
+            	color: #78209d;
+                font-size: 45px;
                 font-weight: 300;
-                line-height: 80px;
+                line-height: 45px;
             }
 
             ul.countdown li.seperator {
-                font-size: 80px;
-                line-height: 70px;
+           	 	color: #78209d;
+                font-size: 45px;
+                line-height: 45px;
                 vertical-align: top;
             }
 
             ul.countdown li p {
                 color: #a7abb1;
-                font-size: 14px;
+                font-size: 12px;
             }
 
+		@media (min-width: 768px) {
+            ul.countdown li span {
+                font-size: 100px;
+                line-height: 100px;
+            }
+
+            ul.countdown li.seperator {
+                font-size: 100px;
+                line-height: 90px;
+                vertical-align: top;
+            }
+
+            ul.countdown li p {
+                font-size: 18px;
+            }
+        }
 
 		</style>
 
@@ -45,7 +65,7 @@
 	<body>
 
 		<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 
 		<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -67,16 +87,16 @@
               <li class="active"><a href="#">Home</a></li>
               <li><a href="features/index.html">Features</a></li>
               <li><a href="#">Download</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li><a href="faq/index.html">FAQ</a></li>
             </ul>
           </div>
 
         </div>
         </nav>
 
-        <div class="container">
-        	<div class="row">
-        		<div class="col-md-12">
+        <div class="container-fluid" style="height:100%; background-color:#FFF">
+        	<div class="row vertical-alignment-container">
+        		<div class="col-xs-12 vertical-alignment-content">
         			<ul class="countdown">
 				        <li>
 				            <span class="days">00</span>
@@ -110,7 +130,7 @@
 	            date: '3/1/2014 12:00:00',
 	            offset: -6
 	        }, function () {
-	            alert('GBA4iOS Yay');
+	         	<!-- function -->
 	        });
 	    </script>
 
