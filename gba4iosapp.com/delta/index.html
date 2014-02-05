@@ -5,8 +5,9 @@
 		<title>GBA4iOS</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="css/common.css" rel="stylesheet" type="text/css">
+
 		<style type="text/css">
 
 			ul.countdown {
@@ -40,7 +41,30 @@
                 font-size: 12px;
             }
 
+            .countdown-container {
+				background-image:url('images/delta.png');
+				background-repeat:no-repeat;
+				background-attachment:fixed;
+				background-position:center;
+				background-size: 130%;
+			}
+
+			.delta-overlay {
+				background-color: #000;
+			}
+
+			/* Phone Size */
+		@media (max-width: 480px) {
+
+	        h3 {
+				font-size: 17px;
+            }
+
+        }
+
+		/* iPad Size or bigger */
 		@media (min-width: 768px) {
+
             ul.countdown li span {
                 font-size: 100px;
                 line-height: 100px;
@@ -55,7 +79,77 @@
             ul.countdown li p {
                 font-size: 18px;
             }
+
+            .countdown-container {
+				background-size: 90%;
+			}
         }
+
+        /* Desktop Size or bigger */
+		@media (min-width: 992px) {
+            .countdown-container {
+				background-size: 70%;
+			}
+        }
+
+		</style>
+
+		<style>
+			@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+			.fade-in {
+			    opacity:0;  /* make things invisible upon start */
+			    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+			    -moz-animation:fadeIn ease-in 1;
+			    animation:fadeIn ease-in 1;
+
+			    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+			    -moz-animation-fill-mode:forwards;
+			    animation-fill-mode:forwards;
+
+			    -webkit-animation-duration:1s;
+			    -moz-animation-duration:1s;
+			    animation-duration:1s;
+			}
+
+			@-webkit-keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
+			@-moz-keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
+			@keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
+
+			.fade-out-background-color {
+				background-color: rgba(0,0,0,1);
+			    -webkit-animation:fadeOutBackgroundColor ease-in 1;
+			    -moz-animation:fadeOutBackgroundColor ease-in 1;
+			    animation:fadeOutBackgroundColor ease-in 1;
+
+			    -webkit-animation-fill-mode:forwards;
+			    -moz-animation-fill-mode:forwards;
+			    animation-fill-mode:forwards;
+
+			    -webkit-animation-duration:1s;
+			    -moz-animation-duration:1s;
+			    animation-duration:1s;
+			}
+
+			.fade-one {
+				-webkit-animation-delay: 0.5s;
+				-moz-animation-delay: 0.5s;
+				animation-delay: 0.5s;
+			}
+
+			.fade-two {
+				-webkit-animation-delay: 2.0s;
+				-moz-animation-delay:2.0s;
+				animation-delay: 2.0s;
+			}
+
+			.fade-three {
+				-webkit-animation-delay: 3.5s;
+				-moz-animation-delay: 3.5s;
+				animation-delay: 3.5s;
+			}
 
 		</style>
 
@@ -66,7 +160,7 @@
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 
-		<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigation">
+		<nav class="navbar-wrapper navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -93,35 +187,43 @@
         </div>
         </nav>
 
-        <div class="container-fluid" style="height:100%;">
-        	<div class="row vertical-alignment-container">
-        		<div class="col-xs-12 vertical-alignment-content">
-        			<ul class="countdown">
-				        <li>
-				            <span class="days">00</span>
-				            <p class="days_ref">days</p>
-				        </li>
-				        <li class="seperator">:</li>
-				        <li>
-				            <span class="hours">00</span>
-				            <p class="hours_ref">hours</p>
-				        </li>
-				        <li class="seperator">:</li>
-				        <li>
-				            <span class="minutes">00</span>
-				            <p class="minutes_ref">minutes</p>
-				        </li>
-				        <li class="seperator">:</li>
-				        <li>
-				            <span class="seconds">00</span>
-				            <p class="seconds_ref">seconds</p>
-				        </li>
-				    </ul>
-        		</div>
-        	</div>
-        </div>
+		<div class="countdown-container vertical-alignment-container" style="height:90%;">
+			<div class="container vertical-alignment-content fade-out-background-color fade-three">
+				<div class="row">
+			        <div class="col-xs-12 text-primary text-center">
+						<h3 class="fade-in fade-one">Game Boy Advance, meet iOS.</h3><h3 class="fade-in fade-two">Again.</h3>
+			        </div>
+				</div>
+	        	<div class="row">
+	        		<div class="col-xs-12">
+	        			<ul class="countdown fade-in fade-three">
+					        <li>
+					            <span class="days">00</span>
+					            <p class="days_ref">days</p>
+					        </li>
+					        <li class="seperator">:</li>
+					        <li>
+					            <span class="hours">00</span>
+					            <p class="hours_ref">hours</p>
+					        </li>
+					        <li class="seperator">:</li>
+					        <li>
+					            <span class="minutes">00</span>
+					            <p class="minutes_ref">minutes</p>
+					        </li>
+					        <li class="seperator">:</li>
+					        <li>
+					            <span class="seconds">00</span>
+					            <p class="seconds_ref">seconds</p>
+					        </li>
+					    </ul>
+	        		</div>
+	        	</div>
+			</div>
+		</div>
 
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 		<script type="text/javascript" src="js/jquery.downCount.js"></script>
 
 	    <script class="source" type="text/javascript">
@@ -129,7 +231,7 @@
 	            date: '3/1/2014 12:00:00',
 	            offset: -6
 	        }, function () {
-	         	<!-- function -->
+	         	/* Function */
 	        });
 	    </script>
 
