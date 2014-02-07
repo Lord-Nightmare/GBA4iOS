@@ -23,14 +23,14 @@
             }
 
             ul.countdown li span {
-            	color: #78209d;
+            	color: #920AB7;
                 font-size: 45px;
                 font-weight: 300;
                 line-height: 45px;
             }
 
             ul.countdown li.seperator {
-           	 	color: #78209d;
+           	 	color: #923AB7;
                 font-size: 45px;
                 line-height: 45px;
                 vertical-align: top;
@@ -46,11 +46,7 @@
 				background-repeat:no-repeat;
 				background-attachment:fixed;
 				background-position:center;
-				background-size: 130%;
-			}
-
-			.delta-overlay {
-				background-color: #000;
+				background-size: 450px;
 			}
 
 			/* Phone Size */
@@ -81,15 +77,13 @@
             }
 
             .countdown-container {
-				background-size: 90%;
+				background-size: 700px;
 			}
         }
 
         /* Desktop Size or bigger */
 		@media (min-width: 992px) {
-            .countdown-container {
-				background-size: 70%;
-			}
+
         }
 
 		</style>
@@ -155,37 +149,36 @@
 
 	</head>
 
-	<body>
+	<body style="background-color:#000000">
 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 
-		<nav class="navbar-wrapper navbar-default navbar-static-top" role="navigation">
-		<div class="container">
+		<div class="navbar navbar-default" role="navigation">
+	       	<div class="container-fluid">
 
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="">GBA4iOS</a>
-          </div>
+	          <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="">GBA4iOS</a>
+	          </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="features/index.html">Features</a></li>
-              <li><a href="#">Download</a></li>
-              <li><a href="faq/index.html">FAQ</a></li>
-            </ul>
-          </div>
+	          <div class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav">
+	              <li class="active"><a href="">Home</a></li>
+	              <li><a href="features/index.html">Features</a></li>
+	              <li><a href="download/index.html">Download</a></li>
+	              <li><a href="faq/index.html">FAQ</a></li>
+				</ul>
+	          </div>
 
-        </div>
-        </nav>
+			</div>
+
+	    </div>
 
 		<div class="countdown-container vertical-alignment-container" style="height:90%;">
 			<div class="container vertical-alignment-content fade-out-background-color fade-three">
