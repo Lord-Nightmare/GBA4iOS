@@ -43,12 +43,14 @@
                 font-size: 18px;
             }
 
-            .countdown-container {
-				background-image:url('images/delta.png');
-				background-repeat:no-repeat;
-				background-attachment:fixed;
-				background-position:center;
-				background-size: 700px;
+            .delta {
+            	opacity: 0;
+            	height: 700;
+            	width: 700;
+            	position: fixed;
+            	margin-left: -350px;
+            	margin-top: -175px;
+            	z-index: -100;
 			}
 
 		</style>
@@ -59,6 +61,12 @@
 			@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 			.fade-in {
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+
 			    opacity:0;  /* make things invisible upon start */
 			    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
 			    -moz-animation:fadeIn ease-in 1;
@@ -73,15 +81,20 @@
 			    animation-duration:1s;
 			}
 
-			@-webkit-keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
-			@-moz-keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
-			@keyframes fadeOutBackgroundColor { from { background-color: rgba(0,0,0,1); } to { background-color:rgba(0,0,0,.75); } }
+			@-webkit-keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
+			@-moz-keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
+			@keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
 
-			.fade-out-background-color {
-				background-color: rgba(0,0,0,1);
-			    -webkit-animation:fadeOutBackgroundColor ease-in 1;
-			    -moz-animation:fadeOutBackgroundColor ease-in 1;
-			    animation:fadeOutBackgroundColor ease-in 1;
+			.fade-in-delta {
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+
+			    -webkit-animation:fadeInDelta ease-in 1;
+			    -moz-animation:fadeInDelta ease-in 1;
+			    animation:fadeInDelta ease-in 1;
 
 			    -webkit-animation-fill-mode:forwards;
 			    -moz-animation-fill-mode:forwards;
@@ -114,7 +127,7 @@
 
 	</head>
 
-	<body style="background-color:#000000">
+	<body>
 
 		<div class="navbar navbar-default" role="navigation">
 	       	<div class="container-fluid">
@@ -142,8 +155,11 @@
 
 	    </div>
 
-		<div class="countdown-container vertical-alignment-container" style="height:90%;">
-			<div class="container vertical-alignment-content fade-out-background-color fade-three">
+		<div class="vertical-alignment-container center-block text-center" style="height:90%;">
+
+			<div class="vertical-alignment-content">
+				<img class="delta fade-in-delta fade-three" src="images/delta.png" alt="delta">
+
 				<div class="row">
 			        <div class="col-xs-12 text-primary text-center">
 						<h3 class="fade-in fade-one">Game Boy Advance, meet iOS.</h3><h3 class="fade-in fade-two">Again.</h3>
@@ -175,6 +191,8 @@
 	        		</div>
 	        	</div>
 			</div>
+
+
 		</div>
 
 
