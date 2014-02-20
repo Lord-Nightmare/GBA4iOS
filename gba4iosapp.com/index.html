@@ -41,14 +41,32 @@
                 font-size: 18px;
             }
 
-            .delta {
+            .invisible {
+            	opacity: 0;
+            }
+
+            #delta {
             	opacity: 0;
             	height: 700;
             	width: 700;
-            	position: fixed;
-            	margin-left: -350px;
-            	margin-top: -175px;
-            	z-index: -100;
+
+			    position:absolute;
+			    left:50%;
+			    top: 50%;
+			    margin-top: -350px;
+			    margin-left:-350px;
+			    z-index: -100;
+			}
+
+			#download-button {
+				opacity: 0;
+
+				position:absolute;
+			    left:50%;
+			    top: 36%;
+			    margin-top: -100;
+			    margin-left:-137.5px;
+			    z-index: 10;
 			}
 
 		</style>
@@ -143,9 +161,9 @@
 	          <div class="navbar-collapse collapse">
 	            <ul class="nav navbar-nav">
 	              <li class="active"><a href="">Home</a></li>
-	              <li><a href="features/index.html">Features</a></li>
-	              <li><a href="download/index.html">Download</a></li>
-	              <li><a href="faq/index.html">FAQ</a></li>
+	              <li><a href="features/">Features</a></li>
+	              <li><a href="download/">Download</a></li>
+	              <li><a href="faq/">FAQ</a></li>
 				</ul>
 	          </div>
 
@@ -156,36 +174,16 @@
 	    <div class="container vertical-alignment-container text-center" style="height:90%;">
 
 			<div class="vertical-alignment-content">
-				<img class="delta fade-in-delta fade-three" src="images/delta.png" alt="delta">
+				<img id="delta" class="fade-in-delta fade-three" src="images/delta.png" alt="delta">
 
 				<div class="row">
 			        <div class="col-xs-12 text-primary text-center">
 						<h3 class="fade-in fade-one">Game Boy Advance, meet iOS.</h3><h3 class="fade-in fade-two">Again.</h3>
 			        </div>
 				</div>
-	        	<div class="row">
+	        	<div class="row" style="height:150px; margin-top:100px;">
 	        		<div class="col-xs-12">
-	        			<ul class="countdown fade-in fade-three">
-					        <li>
-					            <span class="days">00</span>
-					            <p class="days_ref">days</p>
-					        </li>
-					        <li class="seperator">:</li>
-					        <li>
-					            <span class="hours">00</span>
-					            <p class="hours_ref">hours</p>
-					        </li>
-					        <li class="seperator">:</li>
-					        <li>
-					            <span class="minutes">00</span>
-					            <p class="minutes_ref">minutes</p>
-					        </li>
-					        <li class="seperator">:</li>
-					        <li>
-					            <span class="seconds">00</span>
-					            <p class="seconds_ref">seconds</p>
-					        </li>
-					    </ul>
+					    <a id="download-button" class="btn btn-primary btn-lg fade-in fade-three" href="download/" role="button">Download GBA4iOS 2.0</a>
 	        		</div>
 	        	</div>
 			</div>
@@ -197,14 +195,16 @@
 
 		<script type="text/javascript" src="js/jquery.downCount.js"></script>
 
-	    <script class="source" type="text/javascript">
-	        $('.countdown').downCount({
-	            date: '2/19/2014 14:45:00',
-	            offset: -6
-	        }, function () {
+	    <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	        });
-	    </script>
+		  ga('create', 'UA-42841324-1', 'gba4iosapp.com');
+		  ga('send', 'pageview');
+
+		</script>
 
 	</body>
 
