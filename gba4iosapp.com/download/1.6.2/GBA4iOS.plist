@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://gba4iosapp.com/download/1.6.2/GBA4iOS.ipa</string>
+					<string>https://github.com/rileytestut/GBA4iOS/releases/download/1.6.2/GBA4iOS.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
